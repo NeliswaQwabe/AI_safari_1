@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Labora-Tech - Empowering Youth Through Technology</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .scroll-smooth {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="scroll-smooth">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <span class="text-2xl font-bold text-indigo-600">Labora-Tech</span>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition-colors">Home</a>
+                        <a href="#programs" class="text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition-colors">Programs</a>
+                        <a href="#impact" class="text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition-colors">Impact</a>
+                        <a href="#about" class="text-gray-700 hover:text-indigo-600 px-3 py-2 text-sm font-medium transition-colors">About</a>
+                        <a href="#contact" class="bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-indigo-700 transition-colors">Get Started</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-indigo-600">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-gray-700 hover:text-indigo-600">Home</a>
+                <a href="#programs" class="block px-3 py-2 text-gray-700 hover:text-indigo-600">Programs</a>
+                <a href="#impact" class="block px-3 py-2 text-gray-700 hover:text-indigo-600">Impact</a>
+                <a href="#about" class="block px-3 py-2 text-gray-700 hover:text-indigo-600">About</a>
+                <a href="#contact" class="block px-3 py-2 bg-indigo-600 text-white rounded-lg mx-3 text-center">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg pt-20 pb-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+                    Empowering Youth Through
+                    <span class="text-yellow-300">Technology</span>
+                </h1>
+                <p class="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
+                    We equip young minds with cutting-edge tech skills to solve real-world problems and build a better tomorrow
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="scrollToSection('programs')" class="bg-yellow-400 text-gray-900 px-8 py-3 rounded-lg font-semibold hover:bg-yellow-300 transition-colors">
+                        Explore Programs
+                    </button>
+                    <button onclick="scrollToSection('impact')" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-gray-900 transition-colors">
+                        See Our Impact
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Hero Icons -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="text-white/80">
+                    <div class="text-4xl mb-2">💻</div>
+                    <p class="text-sm">Coding</p>
+                </div>
+                <div class="text-white/80">
+                    <div class="text-4xl mb-2">🤖</div>
+                    <p class="text-sm">AI & ML</p>
+                </div>
+                <div class="text-white/80">
+                    <div class="text-4xl mb-2">🌐</div>
+                    <p class="text-sm">Web Dev</p>
+                </div>
+                <div class="text-white/80">
+                    <div class="text-4xl mb-2">📱</div>
+                    <p class="text-sm">Mobile Apps</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Programs</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Comprehensive tech education designed to prepare youth for the digital future
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Program 1 -->
+                <div class="bg-white rounded-xl p-8 shadow-lg card-hover">
+                    <div class="text-4xl mb-4">🚀</div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Tech Foundations</h3>
+                    <p class="text-gray-600 mb-6">
+                        Master the fundamentals of programming, web development, and digital literacy
+                    </p>
+                    <ul class="text-sm text-gray-500 space-y-2 mb-6">
+                        <li>• HTML, CSS, JavaScript</li>
+                        <li>• Python Programming</li>
+                        <li>• Database Basics</li>
+                        <li>• Problem Solving</li>
+                    </ul>
+                    <button class="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition-colors">
+                        Learn More
+                    </button>
+                </div>
+                
+                <!-- Program 2 -->
+                <div class="bg-white rounded-xl p-8 shadow-lg card-hover">
+                    <div class="text-4xl mb-4">🎯</div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Real-World Projects</h3>
+                    <p class="text-gray-600 mb-6">
+                        Apply your skills to solve actual community and global challenges
+                    </p>
+                    <ul class="text-sm text-gray-500 space-y-2 mb-6">
+                        <li>• Community Apps</li>
+                        <li>• Environmental Solutions</li>
+                        <li>• Social Impact Tools</li>
+                        <li>• Startup Incubation</li>
+                    </ul>
+                    <button class="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition-colors">
+                        Learn More
+                    </button>
+                </div>
+                
+                <!-- Program 3 -->
+                <div class="bg-white rounded-xl p-8 shadow-lg card-hover">
+                    <div class="text-4xl mb-4">🌟</div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Leadership & Innovation</h3>
+                    <p class="text-gray-600 mb-6">
+                        Develop leadership skills and innovative thinking for tech entrepreneurship
+                    </p>
+                    <ul class="text-sm text-gray-500 space-y-2 mb-6">
+                        <li>• Team Leadership</li>
+                        <li>• Design Thinking</li>
+                        <li>• Pitch Development</li>
+                        <li>• Mentorship Program</li>
+                    </ul>
+                    <button class="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700 transition-colors">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section id="impact" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Our Impact</h2>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Transforming lives and communities through technology education
+                </p>
+            </div>
+            
+            <!-- Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-indigo-600 mb-2 pulse-animation">500+</div>
+                    <p class="text-gray-600">Students Trained</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-indigo-600 mb-2 pulse-animation">50+</div>
+                    <p class="text-gray-600">Projects Completed</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-indigo-600 mb-2 pulse-animation">25+</div>
+                    <p class="text-gray-600">Community Partners</p>
+                </div>
+                <div class="text-center">
+                    <div class="text-4xl font-bold text-indigo-600 mb-2 pulse-animation">95%</div>
+                    <p class="text-gray-600">Success Rate</p>
+                </div>
+            </div>
+            
+            <!-- Success Stories -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-gray-50 rounded-xl p-8">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            A
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Alex Johnson</h4>
+                            <p class="text-sm text-gray-600">Age 17, Mobile App Developer</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">
+                        "Labora-Tech helped me build an app that connects local farmers with consumers. It's now used by over 1,000 people in our community!"
+                    </p>
+                </div>
+                
+                <div class="bg-gray-50 rounded-xl p-8">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            M
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-900">Maria Santos</h4>
+                            <p class="text-sm text-gray-600">Age 16, AI Enthusiast</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">
+                        "I created an AI tool that helps identify water pollution in our local river. The city council is now using it for environmental monitoring!"
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">About Labora-Tech</h2>
+                    <p class="text-lg text-gray-600 mb-6">
+                        We believe that every young person has the potential to be a changemaker. Our mission is to provide accessible, high-quality technology education that empowers youth to solve real-world problems.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Through hands-on learning, mentorship, and community partnerships, we're building the next generation of tech leaders who will create positive impact in their communities and beyond.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <div class="bg-white px-4 py-2 rounded-lg shadow">
+                            <span class="text-sm font-medium text-gray-700">🎓 Expert Instructors</span>
+                        </div>
+                        <div class="bg-white px-4 py-2 rounded-lg shadow">
+                            <span class="text-sm font-medium text-gray-700">🤝 Industry Partnerships</span>
+                        </div>
+                        <div class="bg-white px-4 py-2 rounded-lg shadow">
+                            <span class="text-sm font-medium text-gray-700">💡 Innovation Focus</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl p-8 text-white">
+                    <h3 class="text-2xl font-bold mb-6">Our Vision</h3>
+                    <p class="text-lg mb-6">
+                        A world where every young person has the skills and confidence to use technology as a force for positive change.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 bg-yellow-400 rounded-full mr-3"></div>
+                            <span>Accessible education for all</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 bg-yellow-400 rounded-full mr-3"></div>
+                            <span>Real-world problem solving</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 bg-yellow-400 rounded-full mr-3"></div>
+                            <span>Community impact focus</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Get Started Today</h2>
+                <p class="text-xl text-gray-600">
+                    Ready to empower the next generation? Join our community of changemakers.
+                </p>
+            </div>
+            
+            <div class="bg-gray-50 rounded-xl p-8">
+                <form class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                        <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent" placeholder="Enter your name">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                        <input type="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent" placeholder="Enter your email">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Age</label>
+                        <select class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+                            <option>Select age range</option>
+                            <option>13-15 years</option>
+                            <option>16-18 years</option>
+                            <option>19-21 years</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Interest</label>
+                        <select class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+                            <option>Select program</option>
+                            <option>Tech Foundations</option>
+                            <option>Real-World Projects</option>
+                            <option>Leadership & Innovation</option>
+                        </select>
+                    </div>
+                    <div class="md:col-span-2">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                        <textarea rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent" placeholder="Tell us about your goals and interests..."></textarea>
+                    </div>
+                    <div class="md:col-span-2">
+                        <button type="submit" class="w-full bg-indigo-600 text-white py-3 rounded-lg font-semibold hover:bg-indigo-700 transition-colors">
+                            Join Labora-Tech
+                        </button>
+                        <p class="text-xs text-gray-500 mt-2 text-center">
+                            <strong>Demo Form:</strong> This is a sample contact form for demonstration purposes
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Labora-Tech</h3>
+                    <p class="text-gray-400">
+                        Empowering youth through technology education and real-world problem solving.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Programs</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Tech Foundations</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Real-World Projects</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Leadership</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Success Stories</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Community</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Connect</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Newsletter</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Social Media</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 Labora-Tech. All rights reserved. Empowering the next generation of tech leaders.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling function
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+        
+        // Close mobile menu when clicking on links
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Form submission
+        const form = document.querySelector('form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your interest! This is a demo form. In a real implementation, this would submit your information to our team.');
+        });
+        
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('shadow-xl');
+            } else {
+                nav.classList.remove('shadow-xl');
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9642d45b261c3e99',t:'MTc1MzM1Mzk0Mi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
